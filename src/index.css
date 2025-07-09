@@ -28,4 +28,12 @@ body {
   .col-center {
     @apply flex flex-col justify-center items-center;
   }
+  .flex-between {
+    @apply flex items-center justify-between;
+  }
+}
+
+@layer components {
+  nav {
+  }
 }
