@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap");
 @import "tailwindcss";
 
 @theme {
   --color-yellow: #e7d393;
   --color-white-100: #efefef;
   --font-sans: "Mona Sans", sans-serif;
-  --font-modern-negra: "Modern Negra", sans-serif;
+  --font-modern-negra: "DM Serif Text", serif;
   --font-serif: "DM Serif Text", serif;
+  --font-stylish: "Lavishly Yours";
 }
 @font-face {
   font-family: "Modern Negra";
@@ -30,6 +33,10 @@ body {
   }
   .flex-between {
     @apply flex items-center justify-between;
+  }
+  .text-gradient {
+    @apply bg-gradient-to-b from-gray-50 to-gray-400 text-transparent bg-clip-text;
+    -webkit-background-clip: text;
   }
 }
 
