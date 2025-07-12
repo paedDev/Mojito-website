@@ -8,17 +8,16 @@ import Hero from "./components/Hero";
 import Preloader from "./components/Preloader";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const App = () => {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    // const timer = setTimeout(() => setLoading(false), 6000);
-    // return () => clearTimeout(timer);
+    const timer = setTimeout(() => setLoading(false), 7000);
+    return () => clearTimeout(timer);
   }, []);
   useGSAP(() => {
     gsap.fromTo('main', {
       opacity: 0,
     }
       , {
-
         ease: 'sine.in',
         duration: 1,
         opacity: 1,
@@ -31,6 +30,9 @@ const App = () => {
       <main id="main" className="w-full overflow-x-hidden" >
         <Navbar />
         <Hero />
+        <div className="h-dvh bg-red-200">
+
+        </div>
 
       </main >
   );

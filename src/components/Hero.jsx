@@ -27,13 +27,27 @@ const Hero = () => {
       stagger: 0.06,
       delay: 1
     });
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: 'bottom top',
+        scrub: true
+      }
+    })
+      .to('#right-leaf', {
+        y: 200
+      }, 0)
+      .to('#left-leaf', {
+        y: -200
+      }, 0);
   }, []);
   return (
     <>
       <section id='hero' className='' >
         <h1 id='title' className='md:mt-32 mt-40 text-7xl md:text-[18vw] leading-none text-center font-modern-negra'> MOJITO</h1>
-        <img src="/images/left-leaf.png" alt="left-leaf" className='absolute left-0 md:top-20 xl:top-36 2xl:top-45 md:bottom-auto -bottom-20 md:w-fit w-1/3' />
-        <img src="/images/right-leaf.png" alt="left-leaf" className='absolute right-0  xl:top-10 2xl:top-0 top-1/3 md:bottom-auto -bottom-20 md:w-fit w-1/3' />
+        <img src="/images/left-leaf.png" alt="left-leaf" id='left-leaf' className=' absolute left-0 md:top-20 xl:top-36 2xl:top-45 md:bottom-auto -bottom-20 md:w-fit w-1/3' />
+        <img src="/images/right-leaf.png" alt="left-leaf" id='right-leaf' className=' absolute right-0  xl:top-10 2xl:top-0 top-1/3 md:bottom-auto -bottom-20 md:w-fit w-1/3' />
 
         <div className='container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-10 top-auto md:top-[30vh] flex justify-between items-end px-10'>
           <div className='flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto'>
