@@ -1,8 +1,13 @@
 import { useGSAP } from '@gsap/react';
-import React from 'react';
+import React, { useRef } from 'react';
 import gsap from 'gsap';
-import { SplitText } from 'gsap/all';
+import { SplitText, ScrollTrigger } from 'gsap/all';
+import { useMediaQuery } from 'react-responsive';
+
 const Hero = () => {
+
+  const videoRef = useRef();
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   useGSAP(() => {
     const heroSplit = new SplitText('#title', {
       type: 'chars,words'
@@ -41,6 +46,23 @@ const Hero = () => {
       .to('#left-leaf', {
         y: -200
       }, 0);
+
+    const startValue = isMobile ? 'top 50%' : 'center 60%';
+    const endValue = isMobile ? '120% center' : 'bottom top';
+    let tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: "#hero-video",
+        start: startValue,
+        end: endValue,
+        scrub: true,
+        pin: true,
+      },
+    });
+    videoRef.current.onloadedmetadata = () => {
+      tl.to(videoRef.current, {
+        currentTime: videoRef.current.duration,
+      });
+    };
   }, []);
   return (
     <>
@@ -50,18 +72,27 @@ const Hero = () => {
         <img src="/images/right-leaf.png" alt="left-leaf" id='right-leaf' className=' absolute right-0  xl:top-10 2xl:top-0 top-1/3 md:bottom-auto -bottom-20 md:w-fit w-1/3' />
 
         <div className='container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-10 top-auto md:top-[30vh] flex justify-between items-end px-10'>
-          <div className='flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto'>
+          <div className='flex lg:flex-row flex-col  gap-10 justify-between items-center lg:items-end mx-auto w-[90%]'>
             <div className='space-y-5 hidden md:block w-full'>
               <p className='lg:text-start text-center'>Cool. Crisp. Classic.</p>
               <p id='subtitle' className='font-modern-negra text-2xl text-yellow max-w-lg font-bold'>Sip the Spirit <br />   of Summer</p>
             </div>
-            <div className='hidden md:block space-y-4 text-md  md:max-w-xs w-full px-4'>
+            <div className='space-y-4 text-md  md:max-w-xs w-full px-4'>
               <p id='subtitle' className='text-left'>Every cocktail we serve is a reflection of our obsession with detail — from the first muddle to the final garnish. That care is what turns a simple drink into something truly memorable. </p>
               <a href="" className='font-semibold opacity-80 lg:text-start text-center hover:text-yellow'>View Cocktails</a>
             </div>
           </div>
         </div>
       </section>
+      <div className='video absolute inset-0'>
+        <video
+          id='hero-video'
+          src="/videos/output.mp4"
+          ref={videoRef}
+          muted
+          playsInline
+          preload='auto' />
+      </div>
     </>
   );
 };

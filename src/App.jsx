@@ -30,9 +30,7 @@ const App = () => {
       <main id="main" className="w-full overflow-x-hidden" >
         <Navbar />
         <Hero />
-        <div className="h-dvh bg-red-200">
 
-        </div>
 
       </main >
   );
