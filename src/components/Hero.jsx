@@ -66,7 +66,7 @@ const Hero = () => {
   }, []);
   return (
     <>
-      <section id='hero' className='' >
+      <section id='hero' className='noisy' >
         <h1 id='title' className='md:mt-32 mt-40 text-7xl md:text-[18vw] leading-none text-center font-modern-negra'> MOJITO</h1>
         <img src="/images/left-leaf.png" alt="left-leaf" id='left-leaf' className=' absolute left-0 md:top-20 xl:top-36 2xl:top-45 md:bottom-auto -bottom-20 md:w-fit w-1/3' />
         <img src="/images/right-leaf.png" alt="left-leaf" id='right-leaf' className=' absolute right-0  xl:top-10 2xl:top-0 top-1/3 md:bottom-auto -bottom-20 md:w-fit w-1/3' />
@@ -84,8 +84,9 @@ const Hero = () => {
           </div>
         </div>
       </section>
-      <div className='video absolute inset-0'>
+      <div className='video w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 flex items-center justify-center'>
         <video
+          className='absolute bottom-0 w-full h-full md:object-contain object-bottom object-cover'
           id='hero-video'
           src="/videos/output.mp4"
           ref={videoRef}
