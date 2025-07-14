@@ -7,6 +7,7 @@ import Gsap from "./components/gsap";
 import Hero from "./components/Hero";
 import Preloader from "./components/Preloader";
 import Cocktails from "./components/Cocktails";
+import About from "./components/About";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -32,6 +33,7 @@ const App = () => {
         <Navbar />
         <Hero />
         <Cocktails />
+        <About />
 
 
       </main >
