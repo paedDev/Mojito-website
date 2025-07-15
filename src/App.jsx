@@ -8,6 +8,7 @@ import Hero from "./components/Hero";
 import Preloader from "./components/Preloader";
 import Cocktails from "./components/Cocktails";
 import About from "./components/About";
+import Art from "./components/Art";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -34,7 +35,7 @@ const App = () => {
         <Hero />
         <Cocktails />
         <About />
-
+        <Art />
 
       </main >
   );

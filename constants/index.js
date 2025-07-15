@@ -2,7 +2,7 @@ const navLinks = [
   { id: "cocktails", title: "Cocktails " },
   { id: "about", title: "About Us" },
   {
-    id: "work",
+    id: "art",
     title: "The Art",
   },
   {
@@ -63,5 +63,16 @@ export const mockTailLists = [
     price: "$29",
   },
 ];
-
+export const goodLists = [
+  "Handpicked ingredients",
+  "Signature techniques",
+  "Bartending artistry in action",
+  "Freshly muddled flavors",
+];
+export const featureLists = [
+  "Perfectly balanced blends",
+  "Garnished to perfection",
+  "Ice-cold every time",
+  "Expertly shaken & stirred",
+];
 export default navLinks;
