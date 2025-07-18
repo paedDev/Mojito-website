@@ -73,7 +73,7 @@ const Art = () => {
         </div>
         <div className=''  >
           <h2 className='will-fade text-4xl font-modern-negra text-center text-white mt-40 mb-5'>Sip-Worthy Perfection</h2>
-          <div id='masked-content' className=' opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-2 bottom-52 left-1/2 -translate-x-1/2'>
+          <div id='masked-content' className=' opacity-0 md:px-0 px-5 space-y-2 absolute md:-bottom-0.5 bottom-52 left-1/2 -translate-x-1/2'>
             <h3 className='md:text-4xl text-2xl text-center font-serif md:w-full w-80 text-white'>Made with Craft, Poured with Passion</h3>
             <p className='text-md text-center'>This isn't just a drink. It's a carefully crafted moment made just for you</p>
           </div>
