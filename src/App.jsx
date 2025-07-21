@@ -10,6 +10,7 @@ import Cocktails from "./components/Cocktails";
 import About from "./components/About";
 import Art from "./components/Art";
 import Menu from "./components/Menu";
+import Contact from "./components/Contact";
 gsap.registerPlugin(ScrollTrigger, SplitText);
 const App = () => {
   const [loading, setLoading] = useState(false);
@@ -18,27 +19,30 @@ const App = () => {
     return () => clearTimeout(timer);
   }, []);
   useGSAP(() => {
-    gsap.fromTo('main', {
-      opacity: 0,
-    }
-      , {
-        ease: 'sine.in',
+    gsap.fromTo(
+      "main",
+      {
+        opacity: 0,
+      },
+      {
+        ease: "sine.in",
         duration: 1,
         opacity: 1,
-      });
+      }
+    );
   }, [loading]);
-  return (
-    loading ? (
-      <Preloader />
-    ) :
-      <main id="main" className="w-full overflow-x-hidden" >
-        <Navbar />
-        <Hero />
-        <Cocktails />
-        <About />
-        <Art />
-        <Menu />
-      </main >
+  return loading ? (
+    <Preloader />
+  ) : (
+    <main id="main" className="w-full overflow-x-hidden">
+      <Navbar />
+      <Hero />
+      <Cocktails />
+      <About />
+      <Art />
+      <Menu />
+      <Contact />
+    </main>
   );
 };
 

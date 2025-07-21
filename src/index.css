@@ -52,6 +52,14 @@ body {
     mask-size: 50%;
     mask-position: center;
   }
+  .radial {
+    background: radial-gradient(
+      circle at center,
+      #3b3737 0%,
+      rgb(12, 12, 12) 50%,
+      transparent
+    );
+  }
 }
 
 @layer components {

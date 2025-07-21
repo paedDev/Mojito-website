@@ -59,6 +59,32 @@ const Menu = () => {
         ease: "power1.inOut",
       }
     );
+    gsap.fromTo(
+      "#sub-title",
+      {
+        opacity: 0,
+        yPercent: 100,
+      },
+      {
+        yPercent: 0,
+        opacity: 100,
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
+    gsap.fromTo(
+      "#sub-p",
+      {
+        opacity: 0,
+        yPercent: 100,
+      },
+      {
+        yPercent: 0,
+        opacity: 100,
+        duration: 1,
+        ease: "power1.inOut",
+      }
+    );
   }, [currentIndex]);
   return (
     <section
@@ -144,15 +170,20 @@ const Menu = () => {
         <div className="flex md:flex-row flex-col w-full md:items-center justify-between lg:absolute bottom-0">
           <div ref={contentRef} className="space-y-4 md:translate-y-10 mb-5">
             <p className="text-gray-400">Recipe For:</p>
-            <p className="md:text-4xl text-3xl text-yellow-100 font-modern-negra max-w-40">
+            <p
+              className="md:text-4xl text-3xl text-yellow-100 font-modern-negra max-w-40"
+              id="menu-title"
+            >
               {currentCocktail.name}
             </p>
           </div>
           <div className="space-y-5 md:max-w-lg text-left">
-            <h2 className="md:text-3xl text-2xl font-serif" id="menu-title">
+            <h2 className="md:text-3xl text-2xl font-serif" id="sub-title">
               {currentCocktail.title}
             </h2>
-            <p className="md:text-md pe-5">{currentCocktail.description}</p>
+            <p className="md:text-md pe-5" id="sub-p">
+              {currentCocktail.description}
+            </p>
           </div>
         </div>
       </div>

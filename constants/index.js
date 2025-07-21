@@ -6,7 +6,7 @@ const navLinks = [
     title: "The Art",
   },
   {
-    id: "Contact",
+    id: "contact",
     title: "Contact",
   },
 ];
@@ -110,4 +110,22 @@ export const sliderLists = [
   },
 ];
 
+export const Schedule = [
+  {
+    name: "Mon-Thu",
+    time: "11:00am - 12:00am",
+  },
+  {
+    name: "Fri",
+    time: "11:00am - 2:00am",
+  },
+  {
+    name: "Sat",
+    time: "9:00am - 2:00am",
+  },
+  {
+    name: "Sun",
+    time: "9:00am - 1:00am",
+  },
+];
 export default navLinks;
