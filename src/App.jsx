@@ -3,7 +3,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger, SplitText } from "gsap/all";
 import Navbar from "./components/Navbar";
-import Gsap from "./components/gsap";
 import Hero from "./components/Hero";
 import Preloader from "./components/Preloader";
 import Cocktails from "./components/Cocktails";
